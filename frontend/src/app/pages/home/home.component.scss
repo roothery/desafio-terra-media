@@ -1,0 +1,29 @@
+@use "../../../styles/variables.scss";
+
+.home-container {
+  height: 100%;
+  display: flex;
+  gap: 20px;
+}
+
+.content-container {
+  width: 100%;
+}
+
+.info-content {
+  display: flex;
+  flex-direction: column;
+  padding: 45px;
+}
+
+.titulo {
+  font-size: 22px;
+  font-weight: 600;
+  color: variables.$title-color;
+}
+
+.subtitulo {
+  font-size: 14px;
+  font-weight: 400;
+  color: variables.$text-color-3;
+}

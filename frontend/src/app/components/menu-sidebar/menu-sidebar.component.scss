@@ -1,0 +1,66 @@
+@use "../../../styles/variables.scss";
+
+.container {
+  height: 100%;
+  padding: 0;
+  width: 305px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: variables.$secondary-color;
+}
+
+.logo-content {
+  padding: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+}
+
+.version-text {
+  font-size: 10px;
+  color: variables.$text-color-3;
+  position: relative;
+  top: 6px;
+}
+
+.user-content {
+  padding: 25px;
+  display: flex;
+  gap: 10px;
+}
+
+.user-avatar {
+  width: 45px;
+  height: 45px;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: variables.$title-color;
+}
+
+.user-role {
+  font-size: 12px;
+  font-weight: 400;
+  color: variables.$text-color-3;
+}
+
+.user-actions {
+  flex: 1;
+}
+
+.action-link {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: variables.$text-color-3;
+}
