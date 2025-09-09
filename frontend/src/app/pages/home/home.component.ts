@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { MenuSidebarComponent } from '../../components/menu-sidebar/menu-sidebar.component';
+import { LivrosComponent } from '../../components/livros/livros.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [MenuSidebarComponent],
+  imports: [MenuSidebarComponent, LivrosComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })

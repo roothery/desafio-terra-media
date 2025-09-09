@@ -1,12 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 
+@use "./styles/variables.scss";
+@use "@angular/material" as mat;
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
 html,
 body {
   width: 100vw;
   height: 100vh;
-  background-color: #fafbff;
+  background-color: variables.$primary-color;
   position: fixed;
   top: 0;
   left: 0;
@@ -31,4 +33,12 @@ button {
 
 .mat-typography {
   font-family: "Poppins", sans-serif !important;
+}
+
+:root {
+  @include mat.progress-spinner-overrides(
+    (
+      active-indicator-color: variables.$tertiary-color,
+    )
+  );
 }
