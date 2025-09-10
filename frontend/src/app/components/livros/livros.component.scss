@@ -1,22 +1,11 @@
-// .data-table {
-//   width: 100%;
+@use "../../../styles/variables.scss";
 
-//   th {
-//     font-weight: 500;
-//     color: #333;
-//     background: #f8f9fa;
-//   }
+.mat-mdc-header-cell,
+.mat-mdc-cell {
+  border-bottom-color: variables.$cell-color;
+}
 
-//   td {
-//     padding: 12px 8px;
-//   }
-
-//   tr.selected {
-//     background-color: #e3f2fd;
-//   }
-
-//   tr.disabled {
-//     opacity: 0.6;
-//     cursor: not-allowed;
-//   }
-// }
+.search-label,
+input.search-input::placeholder {
+  font-size: 14px;
+}

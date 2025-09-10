@@ -6,13 +6,14 @@
 
 html,
 body {
-  width: 100vw;
-  height: 100vh;
   background-color: variables.$primary-color;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
+  width: 100%;
+  max-width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 body,
@@ -41,4 +42,15 @@ button {
       active-indicator-color: variables.$tertiary-color,
     )
   );
+
+  mat-card,
+  mat-paginator,
+  .mat-mdc-table,
+  .mat-mdc-menu-panel {
+    background: variables.$secondary-color;
+  }
+
+  mat-icon.mat-icon {
+    color: variables.$tertiary-color;
+  }
 }
