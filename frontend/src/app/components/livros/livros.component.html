@@ -23,7 +23,9 @@
         <!-- Autor Column -->
         <ng-container matColumnDef="autor">
           <th mat-header-cell *matHeaderCellDef mat-sort-header>Autor</th>
-          <td mat-cell *matCellDef="let element">{{ element.autor }}</td>
+          <td mat-cell *matCellDef="let element">
+            {{ element.autorFormatado }}
+          </td>
         </ng-container>
 
         <!-- Ano de Publicação Column -->
@@ -44,11 +46,17 @@
               <mat-icon>more_vert</mat-icon>
             </button>
             <mat-menu #menu="matMenu">
-              <button mat-menu-item>
+              <button
+                mat-menu-item
+                (click)="abrirModal(element, TipoModalEnum.Livro)"
+              >
                 <mat-icon class="material-icons-outlined">play_arrow</mat-icon>
                 <span>Propriedades do Livro</span>
               </button>
-              <button mat-menu-item>
+              <button
+                mat-menu-item
+                (click)="abrirModal(element, TipoModalEnum.Autor)"
+              >
                 <mat-icon>list</mat-icon>
                 <span>Propriedades do Autor</span>
               </button>

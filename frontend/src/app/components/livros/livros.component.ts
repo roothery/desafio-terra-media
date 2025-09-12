@@ -11,6 +11,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
+import { ModalAutorComponent } from '../modal-autor/modal-autor.component';
+import { TipoModalEnum } from '../../core/enums/tipo-modal.enum';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-livros',
@@ -26,6 +29,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatIconModule,
     MatMenuModule,
     MatButtonModule,
+    ModalAutorComponent,
   ],
   templateUrl: './livros.component.html',
   styleUrl: './livros.component.scss',
@@ -37,7 +41,13 @@ export class LivrosComponent implements OnInit {
   dataSource = new MatTableDataSource<DocsResponse>([]);
   displayedColumns: string[] = ['titulo', 'autor', 'anoPublicacao', 'acoes'];
 
-  constructor(private openLibraryService: OpenLibraryService) {}
+  bsModalRef?: BsModalRef;
+  TipoModalEnum = TipoModalEnum;
+
+  constructor(
+    private openLibraryService: OpenLibraryService,
+    private modalService: BsModalService
+  ) {}
 
   ngOnInit() {
     this.openLibraryService.searchBooksByAuthor().subscribe({
@@ -66,5 +76,19 @@ export class LivrosComponent implements OnInit {
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  abrirModal(element: DocsResponse, tipoModal: TipoModalEnum) {
+    console.log('Abrir modal do autor:', element);
+    console.log('Tipo modal:', tipoModal);
+
+    this.bsModalRef = this.modalService.show(ModalAutorComponent, {
+      class: 'modal-fullscreen',
+      backdrop: 'static',
+      keyboard: false,
+      initialState: {
+        codigoAutor: element.codigoAutor ? element.codigoAutor[0] : null,
+      },
+    });
   }
 }

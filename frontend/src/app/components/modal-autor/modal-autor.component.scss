@@ -1,0 +1,60 @@
+@use "../../../styles/variables.scss";
+
+::ng-deep {
+  .modal-content {
+  }
+}
+
+.modal-autor-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-header,
+.modal-footer {
+  padding: 10px;
+  height: 50px;
+}
+
+.close-header {
+  font-size: 10px;
+}
+
+.modal-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  color: variables.$title-color;
+}
+
+.modal-body {
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 5px;
+  margin: 20px;
+  font-size: 16px;
+}
+
+.modal-footer {
+  background-color: variables.$text-color-4;
+  border: none;
+}
+
+.btn-fechar {
+  font-size: 14px;
+  font-weight: 600;
+  background-color: variables.$tertiary-color;
+  color: variables.$secondary-color;
+  margin: 0;
+}
+
+.name-text {
+  font-size: 32px;
+  font-weight: 600;
+  color: variables.$title-color;
+}
+
+.bio-text {
+  font-size: 16px;
+  color: variables.$text-color-3;
+}

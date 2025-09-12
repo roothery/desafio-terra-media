@@ -1,7 +1,7 @@
 @use "../../../styles/variables.scss";
 
 .home-container {
-  height: 100%;
+  min-height: 100%;
   display: flex;
   gap: 20px;
 }

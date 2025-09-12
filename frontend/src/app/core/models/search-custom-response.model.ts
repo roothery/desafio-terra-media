@@ -6,6 +6,7 @@ export interface SearchCustomResponse {
 export interface DocsResponse {
   titulo: string;
   autor: string[];
+  autorFormatado: string;
   codigoAutor: string;
   anoPublicacao: string;
   codigoCapa: string;

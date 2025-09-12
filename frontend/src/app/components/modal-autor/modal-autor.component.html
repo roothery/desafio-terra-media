@@ -1,0 +1,17 @@
+<section class="modal-autor-container">
+  <div class="modal-header">
+    <p class="modal-title">Propriedades do Autor</p>
+    <button
+      type="button"
+      class="btn-close close-header"
+      (click)="close()"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <p class="name-text">{{ nome }}</p>
+    <p class="bio-text" [innerHTML]="bio"></p>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-fechar" (click)="close()">Fechar</button>
+  </div>
+</section>
