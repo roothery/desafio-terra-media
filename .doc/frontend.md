@@ -1,3 +1,5 @@
+[Voltar para o README](../README.md)
+
 # Terra Média - Frontend
 
 Aplicação construída em Angular 18 com componentes standalone, usando Angular Material para UI, Bootstrap 5 para layout, ngx-bootstrap para modais e lottie-web para animações. Os dados vêm da Open Library (sem necessidade de chave de API).
