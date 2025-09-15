@@ -8,16 +8,15 @@ describe('LoadingComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [LoadingComponent]
-    })
-    .compileComponents();
+      imports: [LoadingComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(LoadingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('deve criar componente', () => {
     expect(component).toBeTruthy();
   });
 });

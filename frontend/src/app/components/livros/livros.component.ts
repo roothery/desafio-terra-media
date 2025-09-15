@@ -14,6 +14,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { ModalAutorComponent } from '../modal-autor/modal-autor.component';
 import { TipoModalEnum } from '../../core/enums/tipo-modal.enum';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { ModalLivroComponent } from '../modal-livro/modal-livro.component';
 
 @Component({
   selector: 'app-livros',
@@ -30,6 +31,7 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
     MatMenuModule,
     MatButtonModule,
     ModalAutorComponent,
+    ModalLivroComponent,
   ],
   templateUrl: './livros.component.html',
   styleUrl: './livros.component.scss',
@@ -79,16 +81,25 @@ export class LivrosComponent implements OnInit {
   }
 
   abrirModal(element: DocsResponse, tipoModal: TipoModalEnum) {
-    console.log('Abrir modal do autor:', element);
-    console.log('Tipo modal:', tipoModal);
-
-    this.bsModalRef = this.modalService.show(ModalAutorComponent, {
-      class: 'modal-fullscreen',
-      backdrop: 'static',
-      keyboard: false,
-      initialState: {
-        codigoAutor: element.codigoAutor ? element.codigoAutor[0] : null,
-      },
-    });
+    if (tipoModal === TipoModalEnum.Livro) {
+      this.bsModalRef = this.modalService.show(ModalLivroComponent, {
+        class: 'modal-fullscreen',
+        backdrop: 'static',
+        keyboard: false,
+        initialState: {
+          detalhesLivro: element,
+        },
+      });
+    } else if (tipoModal === TipoModalEnum.Autor) {
+      this.bsModalRef = this.modalService.show(ModalAutorComponent, {
+        class: 'modal-fullscreen',
+        backdrop: 'static',
+        keyboard: false,
+        initialState: {
+          codigoAutor: element.codigoAutor ? element.codigoAutor[0] : null,
+          nomeAutor: element.autor ? element.autor[0] : 'Desconhecido',
+        },
+      });
+    }
   }
 }

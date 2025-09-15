@@ -1,10 +1,5 @@
 @use "../../../styles/variables.scss";
 
-::ng-deep {
-  .modal-content {
-  }
-}
-
 .modal-autor-container {
   height: 100vh;
   display: flex;

@@ -1,0 +1,82 @@
+<section class="modal-livro-container">
+  <div class="modal-header">
+    <p class="modal-title">Propriedades do Livro</p>
+    <button
+      type="button"
+      class="btn-close close-header"
+      (click)="close()"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <div class="livro-container">
+      <div class="menu-buttons">
+        <div
+          class="nav flex-column nav-pills"
+          id="v-pills-tab"
+          role="tablist"
+          aria-orientation="vertical"
+        >
+          <button
+            class="btn-detalhes nav-link active"
+            id="v-pills-detalhes-tab"
+            data-bs-toggle="pill"
+            data-bs-target="#v-pills-detalhes"
+            type="button"
+            role="tab"
+            aria-controls="v-pills-detalhes"
+            aria-selected="true"
+          >
+            Detalhes
+          </button>
+          <button
+            class="btn-comentarios nav-link"
+            id="v-pills-comentarios-tab"
+            data-bs-toggle="pill"
+            data-bs-target="#v-pills-comentarios"
+            type="button"
+            role="tab"
+            aria-controls="v-pills-comentarios"
+            aria-selected="false"
+          >
+            Comentários
+          </button>
+        </div>
+      </div>
+      <div class="body-content tab-content" id="v-pills-tabContent">
+        <div
+          class="tab-pane fade show active"
+          id="v-pills-detalhes"
+          role="tabpanel"
+          aria-labelledby="v-pills-detalhes-tab"
+        >
+          <div class="imagem-livro">
+            <img [src]="imagemLivro" alt="Capa do Livro" />
+          </div>
+          <div class="info-livro">
+            <p class="texto">{{ detalhesLivro?.titulo }}</p>
+            <p class="texto texto--autor">
+              {{ detalhesLivro?.autorFormatado }}
+            </p>
+            <p class="texto texto--data">
+              Primeira publicação: {{ detalhesLivro?.anoPublicacao }}
+            </p>
+          </div>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="v-pills-comentarios"
+          role="tabpanel"
+          aria-labelledby="v-pills-comentarios-tab"
+        >
+          <div class="icon-section">
+            <P class="texto texto--em-construcao">Em construção...</P>
+            <div id="animacao" style="width: 300px; height: 300px"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-fechar" (click)="close()">Fechar</button>
+  </div>
+</section>

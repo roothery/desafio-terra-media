@@ -1,0 +1,131 @@
+@use "../../../styles/variables.scss";
+
+.modal-livro-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-header,
+.modal-footer {
+  padding: 10px;
+  height: 50px;
+}
+
+.close-header {
+  font-size: 10px;
+}
+
+.modal-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  color: variables.$title-color;
+}
+
+.modal-body {
+  padding: 20px 10px 10px 10px;
+}
+
+.modal-footer {
+  background-color: variables.$text-color-4;
+  border: none;
+}
+
+.btn-fechar {
+  font-size: 14px;
+  font-weight: 600;
+  background-color: variables.$tertiary-color;
+  color: variables.$secondary-color;
+  margin: 0;
+}
+
+.livro-container {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 250px 1fr;
+}
+
+.btn-detalhes,
+.btn-comentarios {
+  text-align: left;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.nav-pills .nav-link {
+  border-radius: 0;
+  background-color: variables.$secondary-color;
+  color: variables.$text-color-2;
+  border-right: 1px solid variables.$text-color-2;
+}
+
+.nav-pills .nav-link.active {
+  color: variables.$tertiary-color;
+  border-right: 2px solid variables.$tertiary-color;
+  &::after {
+    content: "\e86c";
+    font-family: "Material Icons Outlined";
+    font-size: 18px;
+    position: relative;
+    bottom: 3px;
+  }
+}
+
+.body-content {
+  margin: 0 25px;
+  border-radius: 5px;
+  border: 1px solid variables.$text-color-2;
+}
+
+.imagem-livro {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  background-color: variables.$text-color-4;
+
+  img {
+    max-width: 400px;
+    max-height: 400px;
+    padding: 20px 0;
+  }
+}
+
+.body-content:has(#v-pills-detalhes.show.active) {
+  height: fit-content;
+}
+
+.body-content:has(#v-pills-comentarios.show.active) {
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.info-livro {
+  margin: 50px 20px;
+}
+
+.texto {
+  font-size: 20px;
+  color: variables.$title-color;
+  &--autor {
+    font-weight: 600;
+  }
+  &--data {
+    font-size: 18px;
+    color: variables.$text-color-3;
+  }
+  &--em-construcao {
+    font-size: 50px;
+    font-weight: 600;
+  }
+}
+
+.icon-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

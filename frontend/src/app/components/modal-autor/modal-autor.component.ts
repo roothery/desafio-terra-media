@@ -13,6 +13,7 @@ import { OpenLibraryService } from '../../core/services/http/open-library.servic
 })
 export class ModalAutorComponent {
   codigoAutor: string | null = null;
+  nomeAutor: string | null = null;
   nome: string = '';
   bio: string = '';
 
@@ -29,7 +30,10 @@ export class ModalAutorComponent {
     if (this.codigoAutor) {
       this.openLibraryService.getAuthorBiography(this.codigoAutor).subscribe({
         next: (response) => {
-          this.nome = response.name;
+          this.nome =
+            response.name === 'Desconhecido'
+              ? this.nomeAutor || 'Desconhecido'
+              : response.name;
           this.bio = this.formatarTexto(response.bio);
         },
         error: (error) => {

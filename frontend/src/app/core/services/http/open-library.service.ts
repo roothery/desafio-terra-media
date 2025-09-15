@@ -69,4 +69,32 @@ export class OpenLibraryService {
       finalize(() => this.loadingService.hide())
     );
   }
+
+  getBookCoverUrl(
+    coverId: string,
+    coverCode: string,
+    size: 'S' | 'M' | 'L' = 'L'
+  ): Observable<string> {
+    this.loadingService.show();
+    const baseUrl = 'https://covers.openlibrary.org/b';
+    const imagemDefault = 'assets/images/livro-nao-encontrado.png';
+    let coverUrl: string;
+
+    if (coverId) {
+      coverUrl = `${baseUrl}/id/${coverId}-${size}.jpg`;
+    } else if (coverCode) {
+      coverUrl = `${baseUrl}/olid/${coverCode}-${size}.jpg`;
+    } else {
+      coverUrl = imagemDefault;
+    }
+
+    return this.http.get(coverUrl, { responseType: 'blob' }).pipe(
+      map(() => coverUrl),
+      catchError((error) => {
+        console.error('Erro ao obter capa do livro:', error);
+        return of(imagemDefault);
+      }),
+      finalize(() => this.loadingService.hide())
+    );
+  }
 }
