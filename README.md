@@ -7,7 +7,16 @@ Este projeto é uma aplicação inspirada no universo da Terra-Média e nas obra
 ## Informações do Frontend
 
 Esta seção apresenta as principais ferramentas e bibliotecas do frontend e traz o passo a passo para instalar dependências, executar o projeto e rodar os testes.
+
 Veja mais em [Terra Média - Frontend](/.doc/frontend.md)
+
+---
+
+## Informações do Backend
+
+Esta seção apresenta as principais ferramentas e bibliotecas do backend e traz o passo a passo para instalar dependências, executar o projeto e rodar os testes.
+
+Veja mais em [Terra Média - Backend](/.doc/backend.md)
 
 ---
 
