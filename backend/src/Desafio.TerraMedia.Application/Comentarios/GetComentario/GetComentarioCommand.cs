@@ -7,6 +7,8 @@ namespace Desafio.TerraMedia.Application.Comentarios.GetComentario
         public Guid UserId { get; set; }
         public string LivroId { get; set; } = string.Empty;
 
+        public GetComentarioCommand() { }
+
         public GetComentarioCommand(Guid userId, string livroId)
         {
             UserId = userId;

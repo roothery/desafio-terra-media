@@ -11,20 +11,8 @@ namespace Desafio.TerraMedia.Domain.Entities
         public string Texto { get; set; } = string.Empty;
         public DateTime DataComentario { get; set; }
 
-        public Comentario(Guid userId, string livroId, string texto)
+        public Comentario()
         {
-            UserId = userId;
-            LivroId = livroId;
-            Texto = texto;
-            DataComentario = DateTime.Now;
-            Validate();
-        }
-
-        public void Update(Guid userId, string livroId, string texto)
-        {
-            UserId = userId;
-            LivroId = livroId;
-            Texto = texto;
             DataComentario = DateTime.Now;
             Validate();
         }

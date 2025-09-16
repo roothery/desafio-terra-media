@@ -26,7 +26,7 @@ namespace Desafio.TerraMedia.Application.Comentarios.UpdateComentario
 
             var existingComentario = await _comentarioRepository.GetByIdAsync(command.Id);
             if (existingComentario == null)
-                throw new KeyNotFoundException($"Comentario with Id {command.Id} not found.");
+                throw new InvalidOperationException($"Comentario with Id {command.Id} not found.");
 
             await _comentarioRepository.UpdateAsync(_mapper.Map(command, existingComentario));
 
