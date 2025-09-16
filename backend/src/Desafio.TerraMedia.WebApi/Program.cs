@@ -8,7 +8,6 @@ using Desafio.TerraMedia.ORM;
 using Desafio.TerraMedia.WebApi.Middleware;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using Rebus.Config;
 using Serilog;
 
 namespace Desafio.TerraMedia.WebApi;
@@ -52,14 +51,6 @@ public class Program
             });
 
             builder.Services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
-
-            //var inMemoryNetwork = new InMemNetwork();
-            //builder.Services.AddRebus(configure => configure
-            //.Transport(t => t.UseInMemoryTransport(inMemoryNetwork, "sales-queue"))
-            //.Logging(l => l.Console())
-            //.Options(o => o.LogPipeline()));
-
-            builder.Services.AutoRegisterHandlersFromAssemblyOf<Program>();
 
             var app = builder.Build();
             app.UseMiddleware<ValidationExceptionMiddleware>();

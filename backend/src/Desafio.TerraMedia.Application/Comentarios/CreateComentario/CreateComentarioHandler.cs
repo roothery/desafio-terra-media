@@ -19,7 +19,7 @@ namespace Desafio.TerraMedia.Application.Comentarios.CreateComentario
 
         public async Task<CreateComentarioResult> Handle(CreateComentarioCommand command, CancellationToken cancellationToken)
         {
-            var validator = new CreateComentarioValidator();
+            var validator = new CreateComentarioCommandValidator();
             var validationResult = await validator.ValidateAsync(command, cancellationToken);
 
             if (!validationResult.IsValid)
